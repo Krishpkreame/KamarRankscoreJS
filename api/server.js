@@ -1,12 +1,15 @@
 // Importing Required Modules
 const express = require("express"); // Import the Express module for creating the server api
 const X2JS_lib = require("x2js"); // Import the X2JS_lib module for XML to JS Object conversion
+const cors = require("cors");
 var request = require("request"); // Import the Request module for making HTTP requests
+
 
 const x2js = new X2JS_lib(); // Create an instance of X2JS
 
 const app = express(); // Create an instance of the Express
 
+app.use(cors({ origin: "*" }));
 app.use(express.json()); // Register the middleware for parsing JSON
 
 const port = 3000; // Set the port number for the server
