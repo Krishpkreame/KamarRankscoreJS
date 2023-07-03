@@ -71,6 +71,7 @@ app.post("/api/auth", (req, res) => {
       let logon_results = x2js.xml2js(body).LogonResults; // Parse the XML response to JS Object
 
       if (logon_results.Success) {
+        console.log(logon_results);
         // Send successful authentication response
         res.status(200).json({
           logon_level: parseInt(logon_results.LogonLevel), // Login level of the user
