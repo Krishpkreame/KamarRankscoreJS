@@ -1,0 +1,139 @@
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 380px;
+  padding: 22px;
+  background-color: #525252;
+  border-radius: 20px;
+  box-shadow: 0 2px 70px rgba(0, 0, 0, 0.5);
+}
+
+.login-heading {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.login-subheading {
+  font-size: 16px;
+  margin-bottom: 30px;
+  text-align: center;
+
+  color: #d2d2d2;
+  text-decoration: inherit;
+  transition: all 0.2s;
+}
+
+.login-subheading:hover {
+  color: #a8a7a7;
+}
+
+.login-subheading.invalid {
+  font-weight: bold;
+  color: #ff4040;
+}
+
+.login-subheading.invalid:hover {
+  color: #da3636;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.form-group {
+  margin-bottom: 28px;
+}
+
+label {
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 5px;
+  padding-right: 5px;
+}
+
+@keyframes incorrect_up_shake {
+  0% {transform: translateX(0);}
+  20% {transform: translateX(5px);}
+  40% {transform: translateX(-5px);}
+  60% {transform: translateX(5px);}
+  80% {transform: translateX(-5px);}
+  100% {transform: translateX(0);}
+}
+
+input {
+  padding: 8px;
+  font-size: 17px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+input.invalid {
+  border: 2px solid #ff0000;
+  animation: incorrect_up_shake 0.5s;
+}
+
+input:hover {
+  border: 1px solid #10757e;
+}
+
+input:focus {
+  border: 2px solid #10757e;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+}
+
+.login-button {
+  font-weight: bold;
+  padding: 12px 16px;
+  font-size: 20px;
+  background-color: #1597a2;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 0px 5px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+
+.login-button:hover {
+  background-color: #138690;
+  box-shadow: 0 4px 7px rgba(0, 0, 0, 0.35);
+  transform: translateY(-2px);
+}
+
+.login-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.login-button.loading {
+  color: rgba(0, 0, 0, 0);
+  position: relative;
+  overflow: hidden;
+}
+
+.login-button.loading::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  border-top-color: transparent;
+  animation: loading 0.8s linear infinite;
+}
+
+@keyframes loading {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
