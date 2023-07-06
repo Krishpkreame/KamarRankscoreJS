@@ -9,7 +9,7 @@ const x2js = new X2JS_lib(); // Create an instance of X2JS
 
 const app = express(); // Create an instance of the Express
 
-app.use(cors({ origin: "*" }));
+app.use(cors({ origin: "*" })); // Register the middleware for CORS
 app.use(express.json()); // Register the middleware for parsing JSON
 
 const port = 3000; // Set the port number for the server
